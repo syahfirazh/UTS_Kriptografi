@@ -1,0 +1,4 @@
+# Hanya setup_admin.php yang boleh diakses via web
+<FilesMatch "^(?!setup_admin\.php$).*\.php$">
+    Require all denied
+</FilesMatch>

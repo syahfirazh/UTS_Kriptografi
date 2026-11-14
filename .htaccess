@@ -1,0 +1,12 @@
+# SECURE ADMIN SYSTEM - proteksi tingkat Apache
+Options -Indexes
+
+# Blokir file sensitif / dokumentasi / dump
+<FilesMatch "(^\.|\.(env|sql|md|key|pem|log|example|bak|ini|lock)$)">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "DENY"
+</IfModule>
